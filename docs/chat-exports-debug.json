@@ -1,0 +1,81 @@
+{
+  "keys": [
+    "workbench.panel.aichat.view.aichat.chatdata",
+    "aiService.prompts",
+    "workbench.panel.aichat.chatdata",
+    "workbench.panel.aichat.083c665f-b6ca-425d-a3d0-d14021650918.numberOfVisibleViews",
+    "workbench.panel.aichat.0c7ed5d8-75a2-4954-b07b-bed59f564b26.numberOfVisibleViews",
+    "workbench.panel.aichat.0d1301ae-a033-4117-b729-6c809dc047bf.numberOfVisibleViews",
+    "workbench.panel.aichat.15c1bb46-2780-470e-a7da-e2940bd45fa4.numberOfVisibleViews",
+    "workbench.panel.aichat.262e7deb-c8f3-462b-9ca9-4be4169c4810.numberOfVisibleViews",
+    "workbench.panel.aichat.2fced587-bd8c-4bc6-8e63-b4780b83e463.numberOfVisibleViews",
+    "workbench.panel.aichat.4a3de7b3-fef2-4e82-805c-554a96ff6363.numberOfVisibleViews",
+    "workbench.panel.aichat.52e71959-8c33-4140-bba3-b2c0ea1a8af7.numberOfVisibleViews",
+    "workbench.panel.aichat.596f4af7-1d23-488c-9279-3990b503fa86.numberOfVisibleViews",
+    "workbench.panel.aichat.5c24d5df-2501-422e-bbc7-9eea4f9e6e72.numberOfVisibleViews",
+    "workbench.panel.aichat.683fa98a-3e5e-4c21-b735-e40999a07b89.numberOfVisibleViews",
+    "workbench.panel.aichat.6ef6dfff-a2ad-4a5e-a8e3-6214fe89d8a6.numberOfVisibleViews",
+    "workbench.panel.aichat.9edecf79-8c54-4429-accf-387403c54249.numberOfVisibleViews",
+    "workbench.panel.aichat.a6acd5a7-6cf0-4413-92b1-d6a4428e4b65.numberOfVisibleViews",
+    "workbench.panel.aichat.a7d3f4ca-d7ca-4e44-a8e0-f8693142d7bd.numberOfVisibleViews",
+    "workbench.panel.aichat.b258fd6e-b2c6-46d6-b010-885068eb753f.numberOfVisibleViews",
+    "workbench.panel.aichat.bb683a02-3b2d-40da-8a84-a18c7be011ef.numberOfVisibleViews",
+    "workbench.panel.aichat.d01ef5be-ee94-421a-9de4-30280d24d53a.numberOfVisibleViews",
+    "workbench.panel.aichat.dfabbcba-5c3c-43ad-876f-0540046abb4c.numberOfVisibleViews",
+    "workbench.panel.aichat.e127bbb5-3367-46c4-b6e5-fc615c9bd0ee.numberOfVisibleViews",
+    "workbench.panel.aichat.ed5c4456-6169-4133-bb4d-3f25f8b97972.numberOfVisibleViews",
+    "workbench.panel.aichat.f01bbbfb-209f-4dc8-bd2e-755aa6eefffc.numberOfVisibleViews",
+    "workbench.panel.aichat.f1707b19-6b68-492f-87be-a95e153aace0.numberOfVisibleViews",
+    "workbench.panel.composerChatViewPane.083c665f-b6ca-425d-a3d0-d14021650918",
+    "workbench.panel.composerChatViewPane.0c7ed5d8-75a2-4954-b07b-bed59f564b26",
+    "workbench.panel.composerChatViewPane.0d1301ae-a033-4117-b729-6c809dc047bf",
+    "workbench.panel.composerChatViewPane.15c1bb46-2780-470e-a7da-e2940bd45fa4",
+    "workbench.panel.composerChatViewPane.262e7deb-c8f3-462b-9ca9-4be4169c4810",
+    "workbench.panel.composerChatViewPane.2e77fac0-7c72-4fe5-b1cf-584cd60fc0bf",
+    "workbench.panel.composerChatViewPane.2fced587-bd8c-4bc6-8e63-b4780b83e463",
+    "workbench.panel.composerChatViewPane.336763a7-4cfd-4fdd-918a-b9bbd6ce413c",
+    "workbench.panel.composerChatViewPane.4a3de7b3-fef2-4e82-805c-554a96ff6363",
+    "workbench.panel.composerChatViewPane.52e71959-8c33-4140-bba3-b2c0ea1a8af7",
+    "workbench.panel.composerChatViewPane.596f4af7-1d23-488c-9279-3990b503fa86",
+    "workbench.panel.composerChatViewPane.5c24d5df-2501-422e-bbc7-9eea4f9e6e72",
+    "workbench.panel.composerChatViewPane.683fa98a-3e5e-4c21-b735-e40999a07b89",
+    "workbench.panel.composerChatViewPane.6b630f90-fa10-462a-9e70-3119e3c80db3",
+    "workbench.panel.composerChatViewPane.6ef6dfff-a2ad-4a5e-a8e3-6214fe89d8a6",
+    "workbench.panel.composerChatViewPane.7a1896bb-546f-4a3e-8e94-c42625b9f0c1",
+    "workbench.panel.composerChatViewPane.8cc47099-6f22-4ccb-b5ca-950726029972",
+    "workbench.panel.composerChatViewPane.9edecf79-8c54-4429-accf-387403c54249",
+    "workbench.panel.composerChatViewPane.a6acd5a7-6cf0-4413-92b1-d6a4428e4b65",
+    "workbench.panel.composerChatViewPane.a7d3f4ca-d7ca-4e44-a8e0-f8693142d7bd",
+    "workbench.panel.composerChatViewPane.b258fd6e-b2c6-46d6-b010-885068eb753f",
+    "workbench.panel.composerChatViewPane.bb683a02-3b2d-40da-8a84-a18c7be011ef",
+    "workbench.panel.composerChatViewPane.bf3bf463-1557-41ed-a00a-f1783f338bd6",
+    "workbench.panel.composerChatViewPane.d01ef5be-ee94-421a-9de4-30280d24d53a",
+    "workbench.panel.composerChatViewPane.d315f183-12b0-4870-9a2c-3bfa84dbf6e5",
+    "workbench.panel.composerChatViewPane.dfabbcba-5c3c-43ad-876f-0540046abb4c",
+    "workbench.panel.composerChatViewPane.e127bbb5-3367-46c4-b6e5-fc615c9bd0ee",
+    "workbench.panel.composerChatViewPane.ed5c4456-6169-4133-bb4d-3f25f8b97972",
+    "workbench.panel.composerChatViewPane.f01bbbfb-209f-4dc8-bd2e-755aa6eefffc",
+    "workbench.panel.composerChatViewPane.f1707b19-6b68-492f-87be-a95e153aace0"
+  ],
+  "samples": [
+    {
+      "key": "aiService.prompts",
+      "valueShape": "array[10]",
+      "sample": [
+        {
+          "text": "did something went wrong? Please continue",
+          "commandType": 4
+        },
+        {
+          "text": "Please add this functionality:\n5. AI pushes the changes to the site",
+          "commandType": 4
+        }
+      ]
+    },
+    {
+      "key": "workbench.panel.aichat.083c665f-b6ca-425d-a3d0-d14021650918.numberOfVisibleViews",
+      "valueShape": "number",
+      "sample": 1
+    }
+  ]
+}

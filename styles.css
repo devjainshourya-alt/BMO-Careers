@@ -1,0 +1,1883 @@
+/* ===== Design Tokens (from Figma) ===== */
+:root {
+  --bmo-blue: #0075BE;
+  --bmo-blue-cta: #007CD6;
+  --bmo-blue-hover: #005a94;
+  --bmo-dark: #001928;
+  --bmo-gray: #646C76;
+  --bmo-gray-light: #838383;
+  --bmo-border: #D9DCE1;
+  --bmo-bg-light: #F5F6F7;
+  --bmo-bg-subtle: #F7F8FA;
+  --bmo-bg-section: #f9fafb;
+  --bmo-white: #FFFFFF;
+  --font-heebo: 'Heebo', sans-serif;
+  --radius-sm: 8px;
+  --radius-pill: 44px;
+  --radius-pill-lg: 52px;
+  --radius-search: 69px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-mobile: 768px;
+  --breakpoint-large: 1920px;
+
+  /* Large screen (1920px+) - scaled padding */
+  --pad-desktop-lg: 120px;
+
+  /* Spacing scale (from Figma) */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-2xl: 28px;
+  --space-3xl: 32px;
+  --space-4xl: 40px;
+  --space-5xl: 48px;
+  --space-6xl: 54px;
+  --space-7xl: 80px;
+  --space-section: 90px;
+  --pad-desktop: 80px;
+  --pad-tablet: 40px;
+  --pad-mobile: 16px;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  font-family: var(--font-heebo);
+  color: var(--bmo-dark);
+  background: var(--bmo-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Vertical trim: cap height to baseline - removes half-leading from all text */
+h1, h2, h3, h4, h5, h6, p, a, span, button, label, strong, input {
+  text-box: trim-both cap alphabetic;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  width: 100%;
+  background: var(--bmo-white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-top {
+  border-bottom: 1px solid var(--bmo-border);
+}
+
+.nav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--pad-desktop);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo img {
+  width: 159px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.nav-locale {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.locale-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--bmo-dark);
+  padding: 0 0 0 20px;
+}
+
+.locale-border-right {
+  border-right: 1px solid var(--bmo-border);
+  padding: 0 40px 0 0;
+}
+
+.locale-item svg {
+  width: 8px;
+  height: 4px;
+}
+
+.nav-bottom {
+  border-bottom: 1px solid var(--bmo-border);
+}
+
+.nav-bottom-inner {
+  padding: var(--space-md) var(--pad-desktop);
+}
+
+.nav-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xl);
+}
+
+.nav-links a {
+  font-size: 16px;
+  color: var(--bmo-dark);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--bmo-blue);
+}
+
+.nav-link-dropdown {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.saved-jobs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 16px;
+  color: var(--bmo-dark);
+}
+
+.heart-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-apply-now {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border: 1px solid var(--bmo-blue);
+  border-radius: var(--radius-pill-lg);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bmo-blue);
+  background: var(--bmo-white);
+  transition: all 0.2s;
+}
+
+.btn-apply-now:hover {
+  background: var(--bmo-blue);
+  color: var(--bmo-white);
+}
+
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-hamburger {
+  display: none;
+}
+
+.saved-jobs-drawer {
+  display: none;
+}
+
+.nav-locale-drawer {
+  display: none;
+}
+
+.drawer-overlay {
+  display: none;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 394px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+  url('assets/images/hero-background.png') no-repeat,
+  linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+  background-size: 1050px auto, contain;
+  background-position: 120% 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 100px var(--pad-desktop);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4xl);
+}
+
+.hero-content-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4xl);
+}
+
+.hero-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--bmo-dark);
+  line-height: 1.47;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  color: var(--bmo-dark);
+  line-height: 1.8;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  border: 1px solid var(--bmo-border);
+  border-radius: var(--radius-search);
+  padding: 8px;
+  background: var(--bmo-white);
+  min-width: min(650px, 100%);
+  width: 100%;
+  max-width: 650px;
+}
+
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0 var(--space-xl);
+  flex: 1;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.search-input-wrap input {
+  border: none;
+  outline: none;
+  font-family: var(--font-heebo);
+  font-size: 16px;
+  color: var(--bmo-dark);
+  letter-spacing: -0.02em;
+  width: 100%;
+  background: transparent;
+}
+
+.search-input-wrap input::placeholder {
+  color: var(--bmo-gray);
+}
+
+.btn-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--bmo-blue);
+  color: var(--bmo-white);
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heebo);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.btn-search:hover {
+  background: var(--bmo-blue-hover);
+}
+
+.btn-search svg {
+  flex-shrink: 0;
+}
+
+/* ===== Main Layout ===== */
+main {
+  max-width: 1440px;
+  margin: var(--space-section) auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-section);
+}
+
+/* ===== Section Container ===== */
+.section {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.section-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--pad-desktop);
+  width: 100%;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.section-head h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.47;
+  color: var(--bmo-dark);
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--bmo-gray);
+  text-decoration: underline;
+  letter-spacing: -0.02em;
+}
+
+.view-all:hover {
+  color: var(--bmo-blue);
+}
+
+/* ===== Recent Listings ===== */
+.recent-listings {
+  padding: 0;
+}
+
+.job-cards {
+  display: flex;
+  gap: 32px;
+}
+
+.job-card {
+  flex: 1;
+  background: var(--bmo-white);
+  border: 1px solid var(--bmo-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  justify-content: space-between;
+}
+
+.job-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.job-card-labels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.job-category {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--bmo-gray);
+  text-transform: uppercase;
+}
+
+.job-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--bmo-dark);
+  line-height: 1.4;
+}
+
+.job-meta {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--bmo-dark);
+}
+
+.job-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bmo-blue);
+  background: none;
+  text-decoration: none;
+  transition: color 0.2s;
+  align-self: flex-start;
+}
+
+.job-card-cta:hover {
+  color: var(--bmo-blue-hover);
+}
+
+.job-card-cta svg path {
+  stroke: currentColor;
+}
+
+/* ===== Career Paths ===== */
+.career-paths {
+  padding: 0;
+}
+
+.career-paths-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-3xl);
+}
+
+.career-paths-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.47;
+  color: var(--bmo-dark);
+}
+
+.career-paths-header p {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.5;
+  color: var(--bmo-dark);
+}
+
+.career-paths-header strong {
+  font-weight: 700;
+}
+
+.career-cards {
+  display: flex;
+  gap: var(--space-3xl);
+}
+
+.career-card {
+  flex: 1;
+  height: 280px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 28px 20px 28px 28px;
+}
+
+.career-card-light {
+  background: var(--bmo-bg-light);
+}
+
+.career-card-blue {
+  background: var(--bmo-blue);
+}
+
+.career-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 500px;
+  margin-left: auto;
+  padding-right: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.career-card-text h3 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.career-card-light .career-card-text h3 {
+  color: var(--bmo-dark);
+}
+
+.career-card-blue .career-card-text h3 {
+  color: var(--bmo-white);
+}
+
+.career-card-text p {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+}
+
+.career-card-light .career-card-text p {
+  color: var(--bmo-gray);
+  font-weight: 400;
+}
+
+.career-card-blue .career-card-text p {
+  color: var(--bmo-white);
+  font-weight: 500;
+}
+
+.career-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bmo-blue);
+  transition: opacity 0.2s;
+}
+
+.career-card-link:hover {
+  opacity: 0.8;
+}
+
+.career-card-link-white {
+  color: var(--bmo-white);
+}
+
+.career-card-link-white svg path {
+  fill: white;
+}
+
+.career-card-image {
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 245px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.career-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* object-position: bottom center; */
+}
+
+.stud {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: -140px 10px;
+  transform: scale(1.2);
+  transform-origin: bottom left;
+}
+
+.pro {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: -110px 45px;
+  transform: scale(1.2);
+  transform-origin: bottom left;
+}
+
+/* ===== BMO Times ===== */
+.bmo-times {
+  padding: 0;
+}
+
+.bmo-times .section-head {
+  margin-bottom: var(--space-3xl);
+}
+
+.article-cards {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.article-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.article-image {
+  width: 100%;
+  height: 160px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.article-date {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.47;
+  color: var(--bmo-gray-light);
+}
+
+.article-body h3 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.43;
+  color: var(--bmo-dark);
+}
+
+.article-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bmo-blue);
+  transition: opacity 0.2s;
+}
+
+.article-link:hover {
+  opacity: 0.8;
+}
+
+/* ===== Talent Community CTA ===== */
+.talent-cta {
+  padding: 0;
+  width: 100%;
+  position: relative;
+  min-height: 738px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.talent-cta-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 0 var(--pad-desktop);
+  overflow: hidden;
+}
+
+.talent-img {
+  flex: 1;
+  min-width: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.talent-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.talent-img-1 {
+  height: 454px;
+  margin-top: 84px;
+}
+
+.talent-img-2 {
+  height: 530px;
+  margin-top: 0;
+}
+
+.talent-img-3 {
+  height: 530px;
+  margin-top: 31px;
+}
+
+.talent-img-4 {
+  height: 454px;
+  margin-top: 101px;
+}
+
+.talent-cta-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 30%, rgba(255, 255, 255, 0.85) 55%, rgba(255, 255, 255, 1) 60%);
+  pointer-events: none;
+}
+
+.talent-cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4xl);
+  max-width: 900px;
+  padding-bottom: 60px;
+}
+
+.talent-cta-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.talent-cta-content h2 {
+  font-size: 52px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--bmo-dark);
+  margin-top: 550px;
+}
+
+.talent-cta-content p {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--bmo-gray);
+  max-width: 614px;
+}
+
+.btn-register {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-3xl);
+  background: var(--bmo-blue-cta);
+  color: var(--bmo-white);
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  transition: background 0.2s;
+}
+
+.btn-register:hover {
+  background: var(--bmo-blue-hover);
+}
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: var(--space-section);
+  background: var(--bmo-blue);
+  padding: var(--space-4xl) 0;
+  width: 100%;
+}
+
+.footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--pad-desktop);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 361px;
+  padding: 0 0 var(--space-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 1;
+  min-width: 0;
+}
+
+.footer-logo img {
+  width: 159px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.footer-social-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--bmo-white);
+  line-height: 1.47;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background-image: url("assets/images/social-icons.svg");
+  background-repeat: no-repeat;
+  background-size: 268px 24px;
+  background-color: transparent;
+  transition: opacity 0.2s;
+}
+
+/* YouTube icon is wider (~28px) in sprite; give it more room to avoid cutoff */
+.social-icon-yt {
+  width: 28px;
+  background-size: 268px 24px;
+  background-position: -120px 0;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+}
+
+/* Sprite positions: 268×20 sprite, icons at ~0, 60, 120, 188, 248 */
+.social-icon-fb { background-position: 0 0; }
+.social-icon-linkedin { background-position: -58px 0; }
+.social-icon-instagram { background-position: -186px 0; }
+.social-icon-x { background-position: -244px 0; }
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+  flex: 1;
+  min-width: 0;
+  justify-content: flex-end;
+  padding: var(--space-lg) 0;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--bmo-white);
+  margin-bottom: var(--space-sm);
+  white-space: nowrap;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.footer-col a {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--bmo-white);
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.footer-col a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 91px;
+  padding: var(--space-4xl) 0 0;
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xl);
+  max-width: 950px;
+}
+
+.footer-legal a {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--bmo-white);
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.footer-legal a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.footer-copyright {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--bmo-white);
+  text-align: right;
+  letter-spacing: -0.02em;
+}
+
+/* ===== Responsive: 1440px and below ===== */
+@media (max-width: 1440px) {
+  /* Hero: Shift banner image to the right */
+  .hero-bg {
+    background-position: 150% 0;
+  }
+
+  /* Career Path: Add gap between image and text to prevent overlap */
+  .career-card-text {
+    margin-left: 260px; /* Image area (245px) + left offset (24px) + gap (~11px) */
+  }
+
+  /* Talent Community: Image positioning - edit values directly to adjust */
+  .talent-img-1 img {
+    object-position: 10% 0%;
+  }
+  .talent-img-2 img {
+    object-position: 75% 0%;
+  }
+  .talent-img-3 img {
+    transform: scale(1.4);
+    object-position: 55% 0%;
+  }
+  .talent-img-4 img {
+    object-position: 70% 0%;
+  }
+  .talent-img-1 { margin-top: 84px; }
+  .talent-img-2 { margin-top: 0; }
+  .talent-img-3 { margin-top: 31px; }
+  .talent-img-4 { margin-top: 101px; }
+}
+
+/* ===== Responsive: 1024px and below (banner tweaks) ===== */
+@media (max-width: 1024px) {
+  .search-bar {
+    min-width: 0;
+    max-width: 520px;
+  }
+
+  .hero-bg {
+    background-position: -950% 0;
+  }
+
+  /* Talent Community: stronger gradient so bottom of images isn't exposed */
+  .talent-cta-overlay {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 15%, rgba(255, 255, 255, 0.2) 35%, rgba(255, 255, 255, 1) 55%);
+  }
+
+  .talent-cta-content {
+    margin-bottom: 32px;
+  }
+
+  .talent-cta-content h2 {
+    margin-top: -120px;
+  }
+
+  /* Career Paths: full-width cards so images and content aren't squashed */
+  .career-cards {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .career-card {
+    height: auto;
+    min-height: 240px;
+  }
+
+  .career-card-image {
+    width: 220px;
+    left: 24px;
+  }
+
+  .career-card-text {
+    max-width: none;
+    margin-left: 260px; /* Image (220px) + left offset (24px) + gap */
+    padding-right: 28px;
+  }
+
+  /* BMO Times: 2-col, 2-row layout */
+  .article-cards {
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+  }
+
+  .article-card {
+    flex: 1 1 calc(50% - 12px);
+    min-width: 260px;
+  }
+}
+
+/* ===== Responsive: Tablet (768px - 1023px) ===== */
+@media (max-width: 1023px) {
+  .nav-inner {
+    padding: 0 var(--pad-tablet);
+  }
+
+  .nav-bottom-inner {
+    padding: var(--space-md) var(--pad-tablet);
+  }
+
+  .nav-links {
+    gap: var(--space-xl);
+  }
+
+  .section-inner {
+    padding: 0 var(--pad-tablet);
+  }
+
+  /* Hero: keep same layout as 1440/1920 (horizontal search bar, headline style) */
+  .hero-content {
+    padding: 100px var(--pad-tablet);
+  }
+
+  main {
+    gap: 60px;
+  }
+
+  .job-cards {
+    display: flex;
+    gap: 32px;
+  }
+
+  .job-card {
+    flex: 1;
+  }
+
+  .career-card {
+    padding: var(--space-2xl);
+  }
+
+  .article-cards {
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+  }
+
+  .article-card {
+    flex: 1 1 calc(50% - 12px);
+    min-width: 260px;
+  }
+
+  .talent-cta-content {
+    padding-bottom: 40px;
+  }
+
+  .talent-cta {
+    min-height: 623px;
+  }
+
+  .talent-cta-bg {
+    padding: 0 var(--pad-tablet);
+  }
+
+  .talent-img-1,
+  .talent-img-2,
+  .talent-img-3,
+  .talent-img-4 {
+    height: 340px;
+    margin-top: 0;
+  }
+
+  .talent-img-1 { margin-top: 50px; }
+  .talent-img-3 { margin-top: 20px; }
+  .talent-img-4 { margin-top: 60px; }
+
+  .talent-cta-content h2 {
+    font-size: 36px;
+    margin-top: 50px;
+  }
+
+  .talent-cta-content p {
+    font-size: 18px;
+  }
+
+  .footer {
+    margin-top: 60px;
+  }
+
+  .footer-inner {
+    padding: 0 var(--pad-tablet);
+  }
+
+  .footer-links {
+    gap: var(--space-5xl);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-xl);
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-copyright {
+    text-align: center;
+  }
+
+  .footer-col h4,
+  .footer-col a,
+  .footer-legal a {
+    white-space: normal;
+  }
+}
+
+/* ===== Responsive: Mobile (< 768px) ===== */
+@media (max-width: 767px) {
+  /* ---- Navigation ---- */
+  .nav-locale {
+    display: none;
+  }
+
+  .nav-inner {
+    padding: 12px var(--pad-mobile);
+  }
+
+  /* BMO logo: scaled up */
+  .nav-logo img {
+    width: 110px;
+    height: 58px;
+  }
+
+  .nav-bottom-inner {
+    padding: 8px var(--pad-mobile);
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  /* Hamburger on the LEFT */
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-left: 0;
+    order: -1;
+    position: relative;
+    z-index: 201;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--bmo-dark);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Slide-in drawer from left */
+  .nav-links {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    height: 100dvh;
+    flex-direction: column;
+    padding: 80px 24px 32px;
+    gap: 16px;
+    background: var(--bmo-white);
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    border-top: none;
+    overflow-y: auto;
+    flex-basis: auto;
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    padding: 8px 0;
+  }
+
+  /* Saved jobs inside the drawer */
+  .saved-jobs-drawer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: var(--bmo-dark);
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--bmo-border);
+  }
+
+  .saved-jobs-drawer .heart-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Locale/language selector inside drawer */
+  .nav-locale-drawer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 16px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--bmo-border);
+  }
+
+  .nav-locale-drawer .locale-item {
+    padding: 0;
+  }
+
+  /* Drawer backdrop overlay */
+  .nav-toggle:checked ~ .drawer-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 199;
+    cursor: pointer;
+  }
+
+  /* Hide saved jobs from nav bar (only in drawer) */
+  .nav-actions .saved-jobs {
+    display: none;
+  }
+
+  .nav-actions {
+    order: 1;
+    gap: 16px;
+  }
+
+  .btn-apply-now {
+    padding: 12px 16px;
+    font-size: 14px;
+    background: var(--bmo-white);
+    color: var(--bmo-blue);
+    border: 1px solid var(--bmo-blue);
+    border-radius: var(--radius-pill);
+  }
+
+  .nav-bottom-inner .nav-hamburger {
+    order: -1;
+  }
+
+  .nav-bottom-inner .nav-actions {
+    order: 1;
+  }
+
+  /* ---- Hero Section ---- */
+  .hero {
+    height: 350px;
+  }
+
+  /* Mobile banner image from Figma BMO-HomePage */
+  .hero-bg {
+    background-image:
+      url('assets/images/BMO-HomePage/_heroFold-Mobile.png'),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    background-repeat: no-repeat, repeat;
+    background-size: cover, cover;
+    background-position: center, center;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    .hero-bg {
+      background-image:
+        url('assets/images/BMO-HomePage/_heroFold-Mobile@2x.png'),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    }
+  }
+
+  .hero-content {
+    padding: 20px var(--pad-mobile) 16px;
+    height: 100%;
+    align-items: center;
+    gap: 0;
+  }
+
+  .hero-content-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .hero-text-group {
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    letter-spacing: -0.56px;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    letter-spacing: -0.48px;
+  }
+
+  /* Search bar mobile - pinned to bottom */
+  .search-bar {
+    min-width: 0;
+    max-width: 100%;
+    padding: 4px;
+    gap: 0;
+    margin-top: auto;
+  }
+
+  .search-input-wrap {
+    padding: 0 8px;
+    gap: 8px;
+  }
+
+  .search-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .search-input-wrap input {
+    font-size: 10px;
+    letter-spacing: -0.2px;
+  }
+
+  .btn-search {
+    padding: 12px 16px;
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .btn-search .chevron-icon {
+    display: none;
+  }
+
+  /* ---- Section Layout ---- */
+  .section-inner {
+    padding: 0 var(--pad-mobile);
+  }
+
+  main {
+    gap: var(--space-4xl);
+    margin-top: 40px;
+  }
+
+  /* ---- Section Heads: keep title + link on ONE line ---- */
+  .section-head {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .section-head h2 {
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: -0.4px;
+    white-space: nowrap;
+  }
+
+  .view-all {
+    font-size: 12px;
+    letter-spacing: -0.24px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ---- Recent Listings ---- */
+  .job-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .job-card {
+    min-width: 100%;
+    padding: 16px;
+    gap: 28px;
+  }
+
+  .job-card-labels {
+    gap: 24px;
+  }
+
+  .job-category {
+    font-size: 12px;
+    letter-spacing: -0.24px;
+  }
+
+  .job-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.32px;
+  }
+
+  .job-meta {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+  }
+
+  .job-card-cta {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    gap: 8px;
+  }
+
+  /* ---- Career Paths ---- */
+  .career-paths-header h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  /* Hide images on mobile — text takes full width */
+  .career-card-image {
+    display: none;
+  }
+
+  .career-card-text {
+    margin-left: 0;
+    max-width: none;
+    padding-right: 0;
+    gap: 20px;
+  }
+
+  .career-card-text h3 {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+  }
+
+  .career-card-text p {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    line-height: 20px;
+  }
+
+  .career-card-link {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    gap: 8px;
+  }
+
+  .career-card {
+    padding: 16px;
+    height: auto;
+    min-height: auto;
+  }
+
+  /* ---- Article Cards (BMO Times) ---- */
+  .article-cards {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .article-card {
+    min-width: 100%;
+    gap: 16px;
+  }
+
+  .article-image {
+    height: 100px;
+    border-radius: 4px;
+  }
+
+  .article-body {
+    gap: 12px;
+  }
+
+  .article-date {
+    font-size: 10px;
+    letter-spacing: -0.2px;
+  }
+
+  .article-body h3 {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    line-height: 20px;
+  }
+
+  .article-link {
+    font-size: 14px;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  /* ---- BMO Times ---- */
+  .bmo-times .section-head {
+    margin-bottom: var(--space-xl);
+  }
+
+  /* ---- Talent Community CTA ---- */
+  .talent-cta {
+    min-height: auto;
+    justify-content: flex-start;
+    padding-bottom: 35px;
+  }
+
+  /* Images flow in normal document flow (not absolute) */
+  .talent-cta-bg {
+    position: relative;
+    inset: auto;
+    gap: 6px;
+    padding: 0;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .talent-img {
+    border-radius: 2px;
+  }
+
+  .talent-img-1 {
+    height: 113px;
+    margin-top: 21px;
+  }
+
+  .talent-img-2 {
+    height: 133px;
+    margin-top: 0;
+  }
+
+  .talent-img-3 {
+    height: 133px;
+    margin-top: 8px;
+  }
+
+  .talent-img-4 {
+    height: 113px;
+    margin-top: 25px;
+  }
+
+  /* Reset image transforms from wider breakpoints */
+  .talent-img-1 img,
+  .talent-img-2 img,
+  .talent-img-3 img,
+  .talent-img-4 img {
+    transform: none;
+    object-position: center;
+  }
+
+  /* Gradient overlay: relative with negative margin to overlap images */
+  .talent-cta-overlay {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 160px;
+    margin-top: -140px;
+    background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 1) 75%);
+    z-index: 1;
+  }
+
+  .talent-cta-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 16px;
+    max-width: 100%;
+    gap: 24px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .talent-cta-content h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 0;
+    letter-spacing: -0.48px;
+    line-height: 1.2;
+  }
+
+  .talent-cta-content p {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+  }
+
+  .talent-cta-text {
+    gap: 20px;
+  }
+
+  .btn-register {
+    padding: 12px 16px;
+    font-size: 14px;
+    background: var(--bmo-blue);
+    border-radius: var(--radius-pill);
+  }
+
+  /* ---- Footer ---- */
+  .footer {
+    padding: 20px 0 0;
+    margin-top: var(--space-4xl);
+  }
+
+  .footer-inner {
+    padding: 0 var(--pad-mobile);
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .footer-left {
+    align-items: center;
+    gap: 28px;
+  }
+
+  /* Footer logo: scaled up */
+  .footer-logo img {
+    width: 284px;
+    height: 97px;
+  }
+
+  .footer-social {
+    align-items: center;
+    gap: 28px;
+    padding: 0;
+  }
+
+  .footer-social-label {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .social-icons {
+    gap: 32px;
+    justify-content: center;
+  }
+
+  /* Scale social icons to 16px (from 24px) */
+  .social-icon {
+    width: 16px;
+    height: 16px;
+    background-size: 179px 16px;
+  }
+
+  .social-icon-fb {
+    background-position: 0 0;
+  }
+
+  .social-icon-linkedin {
+    background-position: -39px 0;
+  }
+
+  .social-icon-yt {
+    width: 19px;
+    background-size: 179px 16px;
+    background-position: -80px 0;
+  }
+
+  .social-icon-instagram {
+    background-position: -124px 0;
+  }
+
+  .social-icon-x {
+    background-position: -163px 0;
+  }
+
+  /* Hide sitemap on mobile */
+  .footer-links {
+    display: none;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+    text-align: center;
+    padding: 24px 0;
+  }
+
+  .footer-legal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-legal a {
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .footer-copyright {
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: -0.2px;
+  }
+}
+
+/* ===== Large Screens (1920px+) ===== */
+@media (min-width: 1920px) {
+  .nav-inner {
+    max-width: 1920px;
+    padding: 0 var(--pad-desktop-lg);
+  }
+
+  .nav-bottom-inner {
+    padding: var(--space-md) var(--pad-desktop-lg);
+  }
+
+  main {
+    max-width: 1920px;
+  }
+
+  .section {
+    max-width: 1920px;
+  }
+
+  .section-inner {
+    max-width: 1920px;
+    padding: 0 var(--pad-desktop-lg);
+  }
+
+  .hero-content {
+    padding: 100px var(--pad-desktop-lg);
+  }
+
+  .talent-cta {
+    max-width: 1920px;
+  }
+
+  .talent-img-1 img {
+  object-fit: cover;
+  object-position: top left;
+  }
+
+.talent-img-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 85% 20%;
+}
+
+  .talent-cta-bg {
+    padding: 0 var(--pad-desktop-lg);
+  }
+
+  .talent-cta-content {
+    padding-bottom: 60px;
+  }
+
+  .footer-inner {
+    max-width: 1920px;
+    padding: 0 var(--pad-desktop-lg);
+  }
+
+  .footer-top {
+    gap: 480px;
+  }
+
+  .footer-links {
+    gap: var(--space-7xl);
+  }
+
+  .footer-bottom {
+    gap: 120px;
+  }
+
+  .footer-legal {
+    max-width: 1100px;
+  }
+}

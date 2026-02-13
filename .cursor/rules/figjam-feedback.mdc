@@ -1,0 +1,20 @@
+---
+description: Standard procedure for parsing FigJam feedback and implementing design changes
+alwaysApply: true
+---
+
+# FigJam Feedback Procedure
+
+When handling design feedback or layout changes for this project:
+
+1. **Fetch FigJam content** — Use the Figma MCP `get_figjam` tool with file key `ez9aFR7uZIYi7WIuL1hKA2` (node `0:1` or relevant section) to read the latest feedback. Handwritten notes are readable via the rendered images.
+
+2. **Parse instructions** — Extract instructions from handwritten and typed content. Transcribe and correct spelling in handwritten text before implementing.
+
+3. **Implement** — Cross-reference screenshots and design images with instructions, then apply HTML/CSS changes to match the design.
+
+4. **Push changes to the site** — Run `npm run deploy` (optionally with a custom message). This commits, pushes, and triggers GitHub Pages deployment. See [DEPLOY.md](DEPLOY.md).
+
+5. **Return results** — Summarize changes; when requested, provide the corrected transcription of the instructions.
+
+Full procedure: [FIGJAM_FEEDBACK_PROCEDURE.md](FIGJAM_FEEDBACK_PROCEDURE.md)

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMO Careers - You Belong Here</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-top">
+      <div class="nav-inner">
+        <div class="nav-logo">
+          <img src="assets/images/bmo-logo-nav.svg" alt="BMO Logo">
+        </div>
+        <div class="nav-locale">
+          <div class="locale-item locale-border-right">
+            <span>CA</span>
+            <img src="assets/icons/down-arrow-gray.svg" alt="" class="chevron-icon">
+          </div>
+          <div class="locale-item">
+            <span>EN</span>
+            <img src="assets/icons/down-arrow-gray.svg" alt="" class="chevron-icon">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-bottom">
+      <div class="nav-inner nav-bottom-inner">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+        <label for="nav-toggle" class="nav-hamburger" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="nav-links">
+          <div class="nav-locale-drawer">
+            <div class="locale-item">
+              <span>CA</span>
+              <img src="assets/icons/down-arrow-gray.svg" alt="" class="chevron-icon">
+            </div>
+            <div class="locale-item">
+              <span>EN</span>
+              <img src="assets/icons/down-arrow-gray.svg" alt="" class="chevron-icon">
+            </div>
+          </div>
+          <a href="#">Home</a>
+          <a href="#">Campus</a>
+          <a href="#">Work at BMO</a>
+          <a href="#">Our Teams</a>
+          <a href="#" class="saved-jobs-drawer">
+            <img src="assets/images/heart-icon.svg" alt="Saved Jobs" class="heart-icon">
+            <span>Saved Jobs</span>
+          </a>
+        </nav>
+        <label for="nav-toggle" class="drawer-overlay"></label>
+        <div class="nav-actions">
+          <a href="#" class="saved-jobs">
+            <img src="assets/images/heart-icon.svg" alt="Saved Jobs" class="heart-icon">
+            <span>Saved Jobs</span>
+          </a>
+          <a href="#" class="btn-apply-now">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (outside main for full-bleed without 100vw overflow) -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="hero-content-inner">
+          <div class="hero-text-group">
+            <h1>You Belong Here</h1>
+            <p class="hero-subtitle">Take the first step in a new career adventure</p>
+          </div>
+          <div class="search-bar">
+          <div class="search-input-wrap">
+            <img src="assets/images/search-icon.svg" alt="" class="search-icon">
+            <input type="text" placeholder="Job Title, ID or Country/Region" aria-label="Search jobs">
+          </div>
+          <button type="button" class="btn-search">
+          Search Jobs
+          <img src="assets/icons/right-arrow-white.svg" alt="" class="chevron-icon">
+        </button>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <main>
+    <!-- Recent Listings -->
+    <section class="recent-listings section">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>Recent listings</h2>
+          <a href="#" class="view-all">
+          View all jobs
+          <img src="assets/icons/right-arrow-blue.svg" alt="" class="chevron-icon">
+        </a>
+        </div>
+        <div class="job-cards">
+          <article class="job-card">
+            <div class="job-card-body">
+              <div class="job-card-labels">
+                <span class="job-category">RETAIL BANKING</span>
+                <h3 class="job-title">Personal Banking Associate</h3>
+              </div>
+              <p class="job-meta">Toronto, ON • Full-time</p>
+            </div>
+            <a href="#" class="job-card-cta">
+              Apply Now
+              <img src="assets/icons/right-arrow-blue.svg" alt="" class="chevron-icon">
+            </a>
+          </article>
+          <article class="job-card">
+            <div class="job-card-body">
+              <div class="job-card-labels">
+                <span class="job-category">OPERATIONS</span>
+                <h3 class="job-title">Cloud Application Software Developer</h3>
+              </div>
+              <p class="job-meta">Toronto, ON • Full-time</p>
+            </div>
+            <a href="#" class="job-card-cta">
+              Apply Now
+              <img src="assets/icons/right-arrow-blue.svg" alt="" class="chevron-icon">
+            </a>
+          </article>
+          <article class="job-card">
+            <div class="job-card-body">
+              <div class="job-card-labels">
+                <span class="job-category">TECHNOLOGY</span>
+                <h3 class="job-title">Vice President, Software Engineer (C#)</h3>
+              </div>
+              <p class="job-meta">Toronto, ON • Full-time</p>
+            </div>
+            <a href="#" class="job-card-cta">
+              Apply Now
+              <img src="assets/icons/right-arrow-blue.svg" alt="" class="chevron-icon">
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Career Paths -->
+    <section class="career-paths section">
+      <div class="section-inner">
+        <div class="career-paths-header">
+          <h2>We think you'll like it here</h2>
+          <p>Yes, we're a bank. But there's more to it than that. When you join BMO, it opens a world of opportunities. This is a team that's committed to helping you succeed – personally and professionally. Because at BMO, <strong>when you grow, we grow.</strong></p>
+        </div>
+        <div class="career-cards">
+          <article class="career-card career-card-light">
+            <div class="career-card-text">
+              <h3>Interns and Recent Grads</h3>
+              <p>You have your own goals, and your own career journey to map out. No matter which direction you take, we're here to help you find success and the right path.</p>
+              <a href="#" class="career-card-link">
+              Learn More
+              <img src="assets/icons/right-arrow-blue.svg" alt="" class="chevron-icon">
+            </a>
+            </div>
+            <div class="career-card-image">
+              <img class="stud" src="assets/images/career-interns.png" alt="Interns and Recent Grads">
+            </div>
+          </article>
+          <article class="career-card career-card-blue">
+            <div class="career-card-text">
+              <h3>Professional</h3>
+              <p>You know your worth and so do we. That's why we offer the right mix of learning programs, on-the-job experiences, and opportunities to build connections.</p>
+              <a href="#" class="career-card-link career-card-link-white">
+              Learn More
+              <img src="assets/icons/right-arrow-white.svg" alt="" class="chevron-icon">
+            </a>
+            </div>
+            <div class="career-card-image">
+              <img class="pro" src="assets/images/career-professional.png" alt="Professional">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- The BMO Times -->
+    <section class="bmo-times section">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>The BMO Times</h2>
+          <a href="#" class="view-all">
+          All articles
+          <img src="assets/icons/right-arrow-blue.svg" alt="" class="chevron-icon">
+        </a>
+        </div>
+        <div class="article-cards">
+          <article class="article-card">
+            <div class="article-image">
+              <img src="assets/images/article-1.png" alt="">
+            </div>
+            <div class="article-body">
+              <span class="article-date">Dec 10, 2025</span>
+              <h3>BMO named one of the world's Most ethical companies by the Ethisphere institute</h3>
+            </div>
+            <a href="#" class="article-link">
+            Read Blog
+            <img src="assets/icons/right-arrow-blue.svg" alt="" class="chevron-icon">
+          </a>
+          </article>
+          <article class="article-card">
+            <div class="article-image">
+              <img src="assets/images/article-2.png" alt="">
+            </div>
+            <div class="article-body">
+              <span class="article-date">Oct 19, 2025</span>
+              <h3>Nominations are open to celebrate Black tech excellence with the Obsidi® Awards</h3>
+            </div>
+            <a href="#" class="article-link">
+            Read Blog
+            <img src="assets/icons/right-arrow-blue.svg" alt="" class="chevron-icon">
+          </a>
+          </article>
+          <article class="article-card">
+            <div class="article-image">
+              <img src="assets/images/article-3.png" alt="">
+            </div>
+            <div class="article-body">
+              <span class="article-date">Aug 12, 2025</span>
+              <h3>Nearly half of consumers plan on changing their financial New Year's resolutions</h3>
+            </div>
+            <a href="#" class="article-link">
+            Read Blog
+            <img src="assets/icons/right-arrow-blue.svg" alt="" class="chevron-icon">
+          </a>
+          </article>
+          <article class="article-card">
+            <div class="article-image">
+              <img src="assets/images/article-4.png" alt="">
+            </div>
+            <div class="article-body">
+              <span class="article-date">Jun 2, 2025</span>
+              <h3>BMO ranked one of the most sustainable companies in North America</h3>
+            </div>
+            <a href="#" class="article-link">
+            Read Story
+            <img src="assets/icons/right-arrow-blue.svg" alt="" class="chevron-icon">
+          </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Talent Community CTA -->
+    <section class="talent-cta">
+      <div class="talent-cta-bg">
+        <div class="talent-img talent-img-1"><img src="assets/images/talent-1.png" alt=""></div>
+        <div class="talent-img talent-img-2"><img src="assets/images/talent-2.png" alt=""></div>
+        <div class="talent-img talent-img-3"><img src="assets/images/talent-3.png" alt=""></div>
+        <div class="talent-img talent-img-4"><img src="assets/images/talent-4.png" alt=""></div>
+      </div>
+      <div class="talent-cta-overlay"></div>
+      <div class="talent-cta-content">
+        <div class="talent-cta-text">
+          <h2>Join our talent community to stay up to date on opportunities</h2>
+          <p>Get personalized job matches, application updates, and insider tips on life at BMO — delivered straight to your inbox.</p>
+        </div>
+        <a href="#" class="btn-register">Register Now<img src="assets/icons/right-arrow-white.svg" alt="" class="chevron-icon"></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="assets/images/bmo-logo.svg" alt="BMO">
+          </div>
+          <div class="footer-social">
+            <p class="footer-social-label">Follow us</p>
+            <div class="social-icons">
+              <a href="#" class="social-icon social-icon-fb" aria-label="Facebook"></a>
+              <a href="#" class="social-icon social-icon-instagram" aria-label="Instagram"></a>
+              <a href="#" class="social-icon social-icon-linkedin" aria-label="LinkedIn"></a>
+              <a href="#" class="social-icon social-icon-yt" aria-label="YouTube"></a>
+              <a href="#" class="social-icon social-icon-x" aria-label="X"></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Explore Jobs</h4>
+            <ul>
+              <li><a href="#">Job Search</a></li>
+              <li><a href="#">Featured Jobs</a></li>
+              <li><a href="#">Recent Grads</a></li>
+              <li><a href="#">Internship</a></li>
+              <li><a href="#">Professionals</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Teams</h4>
+            <ul>
+              <li><a href="#">Personal</a></li>
+              <li><a href="#">Wealth</a></li>
+              <li><a href="#">Corporate</a></li>
+              <li><a href="#">Commercial</a></li>
+              <li><a href="#">Capital Markets</a></li>
+              <li><a href="#">Technology</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Work at BMO</h4>
+            <ul>
+              <li><a href="#">Benefits</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Awards</a></li>
+              <li><a href="#">About BMO</a></li>
+              <li><a href="#">Accessibility</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Legal</a>
+          <a href="#">Security</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Modern Slavery Act Statement</a>
+          <a href="#">Cookie Settings</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 Bank of Montreal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
