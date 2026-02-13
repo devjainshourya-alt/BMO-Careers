@@ -1362,14 +1362,22 @@ main {
     height: 350px;
   }
 
-  /* Mobile banner – uses same hero image (mobile assets not in repo) */
+  /* Mobile banner image from Figma BMO-HomePage */
   .hero-bg {
     background-image:
-      url('assets/images/hero-background.png'),
+      url('assets/images/BMO-HomePage/_heroFold-Mobile.png'),
       linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
     background-repeat: no-repeat, repeat;
     background-size: cover, cover;
-    background-position: center center, center center;
+    background-position: center, center;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    .hero-bg {
+      background-image:
+        url('assets/images/BMO-HomePage/_heroFold-Mobile@2x.png'),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    }
   }
 
   .hero-content {
