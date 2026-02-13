@@ -1,0 +1,16 @@
+{
+  "name": "bmo-career-site",
+  "private": true,
+  "scripts": {
+    "dev": "serve -l 3000",
+    "dev:reload": "browser-sync start",
+    "figma:annotations": "node scripts/figma-annotations.js",
+    "figma:annotations:full": "node scripts/figma-annotations.js --include-file",
+    "deploy": "node scripts/deploy.js","export:chats":"node scripts/export-chat-history.js"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "serve": "^14.2.4",
+    "sql.js": "^1.14.0"
+  }
+}
