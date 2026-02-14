@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "serve -l 3000",
-    "dev:reload": "browser-sync start",
+    "dev:reload": "browser-sync start --config bs-config.js",
     "figma:annotations": "node scripts/figma-annotations.js",
     "figma:annotations:full": "node scripts/figma-annotations.js --include-file",
     "deploy": "node scripts/deploy.js","export:chats":"node scripts/export-chat-history.js"
