@@ -4,6 +4,19 @@ This project uses **GitHub Pages** for hosting. Pushing to the `main` branch tri
 
 ---
 
+## Next Steps (Git Already Initialized)
+
+If `git init` and the initial commit are already done, run these two commands (replace `YOUR_USERNAME` and `bmo-career-site` with your GitHub username and repo name):
+
+```bash
+git remote add origin https://github.com/YOUR_USERNAME/bmo-career-site.git
+git push -u origin main
+```
+
+Then enable **GitHub Pages** in your repo: **Settings** → **Pages** → **Deploy from a branch** → branch `main`, folder `/ (root)`.
+
+---
+
 ## One-Time Setup
 
 ### 1. Create a GitHub Repository
