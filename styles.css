@@ -357,6 +357,34 @@ img {
   flex-shrink: 0;
 }
 
+/* ===== Campus Hero Banner Override ===== */
+.hero-campus .hero-bg {
+  background:
+    url('assets/images/campus/BMO-Campus/Campus-Banner-Desktop.png') no-repeat,
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+  background-size: 1050px auto, contain;
+  background-position: 120% 0;
+}
+
+/* 2x retina for campus desktop banner */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .hero-campus .hero-bg {
+    background-image:
+      url('assets/images/campus/BMO-Campus/Campus-Banner-Desktop@2x.png'),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+  }
+}
+
+/* Recent Grads card image (campus) */
+.recent-grad {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: -110px 45px;
+  transform: scale(1.2);
+  transform-origin: bottom left;
+}
+
 /* ===== Main Layout ===== */
 main {
   max-width: 1440px;
@@ -1583,6 +1611,24 @@ main {
     .hero-bg {
       background-image:
         url('assets/images/BMO-HomePage/_heroFold-Mobile@2x.png'),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    }
+  }
+
+  /* Campus mobile banner override */
+  .hero-campus .hero-bg {
+    background-image:
+      url('assets/images/campus/BMO-Campus/Campus-Banner-Mobile.png'),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    background-repeat: no-repeat, repeat;
+    background-size: cover, cover;
+    background-position: center, center;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    .hero-campus .hero-bg {
+      background-image:
+        url('assets/images/campus/BMO-Campus/Campus-Banner-Mobile@2x.png'),
         linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
     }
   }
