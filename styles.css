@@ -362,8 +362,8 @@ img {
   background:
     url('assets/images/campus/BMO-Campus/Campus-Banner-Desktop.png') no-repeat,
     linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
-  background-size: 1050px auto, contain;
-  background-position: 120% 0;
+  background-size: cover, cover;
+  background-position: center top, center;
 }
 
 /* 2x retina for campus desktop banner */
@@ -379,10 +379,8 @@ img {
 .recent-grad {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: -110px 45px;
-  transform: scale(1.2);
-  transform-origin: bottom left;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 /* ===== Main Layout ===== */
@@ -657,19 +655,15 @@ main {
 .stud {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: -140px 10px;
-  transform: scale(1.2);
-  transform-origin: bottom left;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .pro {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: -110px 45px;
-  transform: scale(1.2);
-  transform-origin: bottom left;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 /* ===== BMO Times ===== */
@@ -1613,6 +1607,16 @@ main {
         url('assets/images/BMO-HomePage/_heroFold-Mobile@2x.png'),
         linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
     }
+  }
+
+  /* Mobile gradient overlay — fades bottom of banner image to white */
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none;
+    z-index: 1;
   }
 
   /* Campus mobile banner override */
