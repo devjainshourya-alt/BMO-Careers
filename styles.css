@@ -393,7 +393,7 @@ img {
 /* ===== Our Teams Hero Banner Override ===== */
 .hero-teams .hero-bg {
   background:
-    url('assets/images/our-teams/Banner Desktop.png') no-repeat,
+    url('assets/images/our-teams/Banner-Desktop.png') no-repeat,
     linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
   background-size: 53% auto, cover;
   background-position: 1030px -230px, 0 0;
@@ -2079,7 +2079,7 @@ main {
   /* Our Teams mobile banner override */
   .hero-teams .hero-bg {
     background-image:
-      url('assets/images/our-teams/Banner mobile.png'),
+      url('assets/images/our-teams/Banner-Mobile.png'),
       linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
     background-repeat: no-repeat, repeat;
     background-size: 170% auto;
