@@ -1,0 +1,297 @@
+# BMO Career x AI - Claude Rules & Context
+
+## Project Overview
+
+This is the **BMO Careers Website Redesign** project - a static HTML/CSS site with a sophisticated design-to-code workflow using Figma, FigJam, and GitHub Pages deployment.
+
+**Live Site:** https://devjainshourya-alt.github.io/BMO-Careers/
+**GitHub Repo:** https://github.com/devjainshourya-alt/BMO-Careers
+
+### Tech Stack
+- **Frontend:** HTML5, CSS3 (vanilla, no framework)
+- **Font:** Heebo (Google Fonts)
+- **Deployment:** GitHub Pages (auto-deploy from `main` branch)
+- **Dev Tools:** Node.js for scripts, Browser-Sync for live reload
+
+### Pages
+- `index.html` - Homepage (hero, recent listings, career paths, BMO Times articles, talent community CTA)
+- `campus.html` - Campus recruitment page (commitments, student activities, career paths)
+
+---
+
+## Design-to-Development Workflow
+
+### Design Sources
+- **Figma Design File:** `iN0dNMMg1zx69dkUsnvkHp`
+  - URL: https://figma.com/design/iN0dNMMg1zx69dkUsnvkHp/
+  - Contains: Component library, design system, page mockups (Desktop/Tablet/Mobile)
+  
+- **FigJam Feedback Board:** `ez9aFR7uZIYi7WIuL1hKA2`
+  - URL: https://www.figma.com/board/ez9aFR7uZIYi7WIuL1hKA2/
+  - Purpose: Multi-stakeholder feedback collection and design iteration
+  - Content: Browser screenshots, design references, handwritten/typed instructions
+
+### Standard FigJam Feedback Procedure
+
+**When implementing design feedback or layout changes:**
+
+1. **Fetch FigJam Content**
+   - Use Figma MCP tool `get_figjam` with file key `ez9aFR7uZIYi7WIuL1hKA2`
+   - Default node: `0:1` (or specify relevant section)
+   - This renders the board as images, making handwritten content readable
+
+2. **Parse Instructions**
+   - Extract typed sticky notes, comments, and text shapes
+   - Read handwritten annotations from rendered images
+   - Transcribe and correct any spelling errors in handwritten text
+   - Correlate instructions with nearby screenshots and design references
+
+3. **Identify What to Change**
+   - **Screenshots** = current state (what's wrong/what needs adjustment)
+   - **Design file screens** = target appearance (what it should look like)
+   - **Handwritten/typed notes** = specific instructions and requirements
+
+4. **Implement Changes**
+   - Apply HTML structure changes in `index.html` or `campus.html`
+   - Apply CSS styling changes in `styles.css`
+   - Match spacing, typography, colors, and layout to design specifications
+   - Use design annotations from `DESIGN_ANNOTATIONS.md` for exact measurements
+
+5. **Deploy to Live Site**
+   ```bash
+   npm run deploy
+   # Or with custom commit message:
+   npm run deploy -- "Fix hero section spacing per FigJam feedback"
+   ```
+   - This runs `scripts/deploy.js` which commits and pushes to GitHub
+   - GitHub Pages auto-deploys within 1-2 minutes
+   - Full setup instructions in `DEPLOY.md`
+
+6. **Return Results**
+   - Provide summary of changes implemented
+   - When requested, include corrected transcription of instructions
+   - Note any design decisions or assumptions made
+
+**Reference:** See `FIGJAM_FEEDBACK_PROCEDURE.md` for complete documentation.
+
+---
+
+## Design Annotations & Spacing
+
+### Auto-Generated Annotations
+The `DESIGN_ANNOTATIONS.md` file contains:
+- Spacing measurements extracted from Figma auto-layout frames
+- Gap and padding values for all components
+- Typed sticky notes and comments from FigJam boards
+
+**Update annotations:**
+```bash
+# Comments only (fast)
+npm run figma:annotations
+
+# Comments + design-layer annotations + spacing measurements (comprehensive)
+npm run figma:annotations:full
+```
+
+### Responsive Breakpoints
+Defined in `styles.css`:
+- **Desktop:** 1024px and up
+- **Tablet:** 768px–1023px  
+- **Mobile:** under 768px
+
+Use mobile-first approach with `@media (min-width: ...)` queries.
+
+---
+
+## File Structure
+
+```
+BMO Career x AI/
+├── index.html              # Homepage
+├── campus.html             # Campus recruitment page
+├── styles.css              # All styles (single file, no preprocessor)
+├── package.json            # Scripts and dependencies
+├── .env                    # Figma API credentials (gitignored)
+├── assets/
+│   ├── images/            # Photos, illustrations, logos
+│   └── icons/             # SVG icons and small graphics
+├── scripts/
+│   ├── deploy.js          # Git commit + push for deployment
+│   ├── figma-annotations.js   # Extract design annotations to MD
+│   └── export-chat-history.js # Export Cursor chat history
+├── docs/
+│   └── chat-exports/      # Exported conversation history
+├── .cursor/
+│   └── rules/
+│       └── figjam-feedback.mdc  # Original Cursor rule
+└── Documentation:
+    ├── SETUP.md                      # Project setup guide
+    ├── DEPLOY.md                     # GitHub Pages deployment
+    ├── FIGJAM_FEEDBACK_PROCEDURE.md  # Complete feedback workflow
+    ├── DESIGN_ANNOTATIONS.md         # Auto-generated spacing/comments
+    ├── HANDWRITING_OCR.md            # Fallback for handwriting
+    ├── MIGRATION_CHECKPOINT.md       # Profile migration guide
+    ├── CHAT_HISTORY_ACCESS.md        # Cursor chat access
+    └── GITHUB_PAGES_TROUBLESHOOT.md  # Deployment troubleshooting
+```
+
+---
+
+## Available Commands
+
+```bash
+# Development
+npm run dev              # Start static server on port 3000
+npm run dev:reload       # Start Browser-Sync with live reload
+
+# Design Annotations
+npm run figma:annotations       # Extract comments only
+npm run figma:annotations:full  # Extract comments + spacing + layers
+
+# Deployment
+npm run deploy                              # Deploy with default message
+npm run deploy -- "Custom commit message"   # Deploy with custom message
+
+# Utilities
+npm run export:chats    # Export Cursor chat history to Markdown
+```
+
+---
+
+## Key Design System Elements
+
+### Typography (Heebo)
+- Headings: 600-700 weight
+- Body: 400-500 weight
+- Hero title: Large, bold
+- Section headers: Medium weight
+- Job cards: Mix of weights for hierarchy
+
+### Color Palette
+- **Primary Blue:** BMO brand blue (links, CTAs, accents)
+- **White/Light Gray:** Backgrounds, cards
+- **Dark Gray/Black:** Text, headings
+- **Accent Colors:** Category tags, highlights
+
+### Component Patterns
+- **Job Cards:** Category tag + title + meta + CTA link
+- **Career Cards:** Light variant (white bg) and Blue variant (blue bg)
+- **Article Cards:** Image + date + title + link
+- **Hero Section:** Full-bleed background + centered content + search bar
+- **Navigation:** Dual-level (top locale bar + main nav), responsive hamburger
+- **Footer:** Multi-column links + social icons + legal links
+
+### Spacing Scale
+Extracted from Figma, documented in `DESIGN_ANNOTATIONS.md`:
+- Common gaps: 8px, 12px, 16px, 20px, 24px, 28px, 32px, 40px
+- Section padding: 40px (desktop), 20px (tablet), 16px (mobile)
+- Card padding: 28px (desktop/tablet), 16px (mobile)
+
+---
+
+## MCP Tools Available
+
+When using Claude with Figma connector enabled:
+
+### Figma MCP Tools
+- `get_figjam` - Read FigJam boards (renders as images, includes handwriting)
+- `get_design_context` - Get UI code for Figma nodes
+- `get_metadata` - Get node structure/hierarchy
+- `get_screenshot` - Generate screenshots of Figma nodes
+- `get_variable_defs` - Get design tokens/variables
+
+### Usage Pattern
+```
+When asked to implement FigJam feedback:
+1. Call get_figjam with fileKey="ez9aFR7uZIYi7WIuL1hKA2", nodeId="0:1"
+2. Parse the visual content and text
+3. Implement changes in HTML/CSS
+4. Deploy via npm run deploy
+```
+
+---
+
+## Git & Deployment
+
+### Repository
+- **Remote:** https://github.com/devjainshourya-alt/BMO-Careers.git
+- **Branch:** `main` (default)
+- **Hosting:** GitHub Pages (root directory)
+
+### Deployment Process
+1. Make changes to HTML/CSS
+2. Run `npm run deploy` (or with custom message)
+3. Script commits and pushes to `origin/main`
+4. GitHub Pages rebuilds automatically (1-2 min)
+5. Changes appear at: https://devjainshourya-alt.github.io/BMO-Careers/
+
+**Troubleshooting:** See `GITHUB_PAGES_TROUBLESHOOT.md`
+
+---
+
+## Environment Variables
+
+Create `.env` file (gitignored) with:
+```
+FIGMA_ACCESS_TOKEN=your_figma_personal_access_token
+FIGMA_FILE_KEY=iN0dNMMg1zx69dkUsnvkHp
+FIGJAM_FILE_KEY=ez9aFR7uZIYi7WIuL1hKA2
+```
+
+Get Figma token: Settings → Security → Personal Access Tokens
+
+---
+
+## Working Principles
+
+### Development Approach
+- **Mobile-first CSS:** Base styles for mobile, `@media` queries scale up
+- **Single CSS file:** No preprocessor, vanilla CSS for simplicity
+- **Semantic HTML:** Proper landmarks, ARIA labels where needed
+- **No JavaScript:** Static site, all interactions via CSS
+- **Fast builds:** No build step, direct HTML/CSS editing
+
+### Code Quality
+- Clean, readable HTML structure
+- BEM-like CSS naming (component-based)
+- Consistent spacing and formatting
+- Comments for complex CSS patterns
+- Accessibility considerations (alt text, ARIA, semantic tags)
+
+### Iteration Workflow
+1. Receive feedback via FigJam board
+2. Parse feedback using Figma MCP
+3. Implement changes locally
+4. Test responsive behavior (dev server)
+5. Deploy to GitHub Pages
+6. Validate on live site
+7. Gather next round of feedback
+
+---
+
+## Documentation Priority
+
+When questions arise, consult in this order:
+1. `FIGJAM_FEEDBACK_PROCEDURE.md` - For design feedback workflow
+2. `DESIGN_ANNOTATIONS.md` - For spacing and design specs
+3. `DEPLOY.md` - For deployment issues
+4. `SETUP.md` - For initial setup or tool configuration
+5. Specific troubleshooting docs as needed
+
+---
+
+## Context for AI Assistance
+
+**Project Stage:** Active development with multi-stakeholder feedback cycles
+**Design Maturity:** High-fidelity Figma designs with detailed spacing specs
+**Deployment:** Production-ready, live on GitHub Pages
+**Workflow:** Design → FigJam Feedback → Implementation → Deploy → Review
+**Primary Tasks:** Implementing design feedback, refining responsive behavior, maintaining design system consistency
+
+**When assisting:**
+- Prioritize design fidelity to Figma mockups
+- Use exact spacing values from `DESIGN_ANNOTATIONS.md`
+- Maintain mobile-first responsive approach
+- Keep code clean and maintainable
+- Always deploy changes via `npm run deploy`
+- Document design decisions and assumptions
