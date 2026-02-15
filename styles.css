@@ -668,6 +668,321 @@ main {
   object-position: center bottom;
 }
 
+/* ===== Testimonials (Work at BMO) ===== */
+.testimonials {
+  padding: 0;
+}
+
+.testimonials-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.testimonials-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.56px;
+  color: var(--bmo-dark);
+  line-height: 56px;
+}
+
+.testimonials-header p {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.64px;
+  color: var(--bmo-dark);
+  line-height: 24px;
+}
+
+.testimonials-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+.testimonials-quotes {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.testimonial-quote {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.quote-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quote-mark {
+  font-size: 75px;
+  color: var(--bmo-blue);
+  line-height: 26px;
+  letter-spacing: -1.5px;
+  height: 26px;
+}
+
+.quote-text p {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--bmo-gray);
+  letter-spacing: -0.36px;
+  line-height: 1.5;
+}
+
+.quote-author {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.quote-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.quote-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quote-author-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--bmo-dark);
+  letter-spacing: -0.32px;
+  line-height: 24px;
+}
+
+.quote-author-role {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bmo-blue);
+  letter-spacing: -0.28px;
+  line-height: 24px;
+}
+
+/* Carousel dots (hidden on desktop) */
+.testimonial-dots,
+.video-dots {
+  display: none;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--bmo-gray);
+}
+
+.dot-active {
+  width: 40px;
+  border-radius: 47px;
+  background: var(--bmo-blue);
+}
+
+/* Video Testimonials */
+.video-testimonials {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.video-testimonial {
+  flex: 1;
+  height: 450px;
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(129deg, rgba(0, 0, 0, 0) 30%, rgba(0, 124, 214, 0.5) 95%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 37%, rgba(0, 0, 0, 0.7) 73%);
+}
+
+.video-info {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.video-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  background: var(--bmo-blue);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--bmo-white);
+  width: fit-content;
+}
+
+.video-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.video-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--bmo-white);
+  letter-spacing: -0.32px;
+}
+
+.video-role {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--bmo-white);
+  letter-spacing: -0.28px;
+  line-height: 24px;
+}
+
+/* ===== Team Cards (Our Teams) ===== */
+.team-cards-section {
+  padding: 0;
+}
+
+.team-tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 48px;
+}
+
+.team-tab-labels {
+  display: flex;
+  gap: 71px;
+  align-items: center;
+}
+
+.team-tab-active {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--bmo-dark);
+  letter-spacing: -0.4px;
+}
+
+.team-tab-inactive {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--bmo-gray);
+  letter-spacing: -0.4px;
+}
+
+.team-tab-divider {
+  width: 530px;
+  height: 2px;
+  background: #D9D9D9;
+  border-radius: 47px;
+  position: relative;
+}
+
+.team-tab-divider-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 245px;
+  height: 2px;
+  background: #007CD6;
+  border-radius: 47px;
+}
+
+.team-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 66px 32px;
+}
+
+.team-card {
+  flex: 0 0 calc(33.333% - 22px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.team-card-image {
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.team-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.team-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.team-card-info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--bmo-dark);
+  letter-spacing: -0.4px;
+}
+
+.team-card-info p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--bmo-gray);
+  letter-spacing: -0.32px;
+  line-height: 24px;
+}
+
+.team-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--bmo-blue);
+  transition: opacity 0.2s;
+}
+
+.team-card-link:hover {
+  opacity: 0.8;
+}
+
 /* ===== BMO Times ===== */
 .bmo-times {
   padding: 0;
@@ -1429,6 +1744,26 @@ main {
   .footer-legal a {
     white-space: normal;
   }
+
+  /* ---- Testimonials (Work at BMO) ---- */
+  .testimonials-header h2 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .video-testimonial {
+    height: 300px;
+    padding: 20px;
+  }
+
+  /* ---- Team Cards (Our Teams) ---- */
+  .team-cards-grid {
+    gap: 48px 32px;
+  }
+
+  .team-card {
+    flex: 0 0 calc(50% - 16px);
+  }
 }
 
 /* ===== Responsive: Mobile (< 768px) ===== */
@@ -2143,6 +2478,126 @@ main {
     font-size: 10px;
     text-align: center;
     letter-spacing: -0.2px;
+  }
+
+  /* ---- Testimonials (Work at BMO) ---- */
+  .testimonials-header h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .testimonials-header p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .testimonials-content {
+    gap: 40px;
+  }
+
+  .testimonials-quotes {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Show only first testimonial on mobile, hide others */
+  .testimonial-quote:nth-child(n+2) {
+    display: none;
+  }
+
+  .testimonial-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quote-author {
+    justify-content: center;
+  }
+
+  .quote-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .quote-text p {
+    font-size: 16px;
+  }
+
+  .quote-mark {
+    font-size: 60px;
+  }
+
+  .video-testimonials {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Show only first video on mobile, hide others */
+  .video-testimonial:nth-child(n+2) {
+    display: none;
+  }
+
+  .video-testimonial {
+    height: 370px;
+  }
+
+  .video-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ---- Team Cards (Our Teams) ---- */
+  .team-tabs {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .team-tab-labels {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .team-tab-active,
+  .team-tab-inactive {
+    font-size: 14px;
+  }
+
+  .team-tab-divider {
+    display: none;
+  }
+
+  .team-cards-grid {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .team-card {
+    flex: 1;
+    width: 100%;
+  }
+
+  .team-card-image {
+    height: 120px;
+  }
+
+  .team-card-info h3 {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+  }
+
+  .team-card-info p {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    line-height: 20px;
+  }
+
+  .team-card-link {
+    font-size: 14px;
   }
 }
 
