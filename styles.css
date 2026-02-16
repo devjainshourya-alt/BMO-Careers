@@ -164,17 +164,33 @@ img {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: var(--space-3xl);
+  gap: var(--space-xs);
+  position: relative;
 }
 
-.nav-links a {
+.nav-links a:not(.saved-jobs-drawer) {
   font-size: 16px;
   color: var(--bmo-dark);
-  transition: color 0.2s;
+  padding: 12px 20px;
+  border-radius: 12px;
+  transition: color 0.25s ease, background-color 0.25s ease;
 }
 
-.nav-links a:hover {
+.nav-links a.active {
   color: var(--bmo-blue);
+}
+
+/* Red sliding indicator */
+.nav-indicator {
+  position: absolute;
+  bottom: -4px;
+  height: 5px;
+  width: 18px;
+  border-radius: 2px;
+  background-color: #ED1C24;
+  transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .nav-link-dropdown {
@@ -1709,7 +1725,11 @@ main {
   }
 
   .nav-links {
-    gap: var(--space-xl);
+    gap: var(--space-2xs);
+  }
+
+  .nav-links a:not(.saved-jobs-drawer) {
+    padding: 10px 14px;
   }
 
   .section-inner {
@@ -1950,9 +1970,15 @@ main {
     transform: translateX(0);
   }
 
-  .nav-links a {
+  .nav-links a,
+  .nav-links a:not(.saved-jobs-drawer) {
     font-size: 16px;
     padding: 8px 0;
+    border-radius: 0;
+  }
+
+  .nav-indicator {
+    display: none;
   }
 
   /* Saved jobs inside the drawer */
