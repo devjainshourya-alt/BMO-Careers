@@ -97,7 +97,9 @@ img {
 /* ===== Navbar ===== */
 .navbar {
   width: 100%;
-  background: var(--bmo-white);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -229,8 +231,8 @@ img {
   font-size: 14px;
   font-weight: 700;
   color: var(--bmo-blue);
-  background: var(--bmo-white);
-  transition: all 0.2s;
+  background: transparent;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .btn-apply-now:hover {
@@ -376,11 +378,12 @@ img {
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.2s;
+  transition: background 0.2s, gap 300ms ease-in-out;
 }
 
 .btn-search:hover {
   background: var(--bmo-blue-hover);
+  gap: 16px;
 }
 
 .btn-search svg {
@@ -481,10 +484,12 @@ main {
   color: var(--bmo-gray);
   text-decoration: underline;
   letter-spacing: -0.02em;
+  transition: color 0.2s, gap 300ms ease-in-out;
 }
 
 .view-all:hover {
   color: var(--bmo-blue);
+  gap: 16px;
 }
 
 /* ===== Recent Listings ===== */
@@ -507,6 +512,23 @@ main {
   flex-direction: column;
   gap: var(--space-2xl);
   justify-content: space-between;
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+}
+
+.job-card:hover {
+  background: var(--bmo-blue);
+  border-color: var(--bmo-blue);
+}
+
+.job-card:hover .job-category,
+.job-card:hover .job-title,
+.job-card:hover .job-meta,
+.job-card:hover .job-card-cta {
+  color: var(--bmo-white);
+}
+
+.job-card:hover .job-card-cta .chevron-icon {
+  filter: brightness(0) invert(1);
 }
 
 .job-card-body {
@@ -527,6 +549,7 @@ main {
   letter-spacing: -0.02em;
   color: var(--bmo-gray);
   text-transform: uppercase;
+  transition: color 300ms ease-in-out;
 }
 
 .job-title {
@@ -535,6 +558,7 @@ main {
   letter-spacing: -0.02em;
   color: var(--bmo-dark);
   line-height: 1.4;
+  transition: color 300ms ease-in-out;
 }
 
 .job-meta {
@@ -542,6 +566,7 @@ main {
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--bmo-dark);
+  transition: color 300ms ease-in-out;
 }
 
 .job-card-cta {
@@ -553,8 +578,17 @@ main {
   color: var(--bmo-blue);
   background: none;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 300ms ease-in-out, gap 300ms ease-in-out;
   align-self: flex-start;
+}
+
+.job-card-cta .chevron-icon {
+  transition: filter 300ms ease-in-out;
+}
+
+.job-card-cta:hover,
+.job-card:hover .job-card-cta {
+  gap: 12px;
 }
 
 .job-card-cta:hover {
@@ -669,11 +703,12 @@ main {
   font-size: 14px;
   font-weight: 700;
   color: var(--bmo-blue);
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, gap 300ms ease-in-out;
 }
 
 .career-card-link:hover {
   opacity: 0.8;
+  gap: 16px;
 }
 
 .career-card-link-white {
@@ -1025,11 +1060,12 @@ main {
   font-size: 16px;
   font-weight: 700;
   color: var(--bmo-blue);
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, gap 300ms ease-in-out;
 }
 
 .team-card-link:hover {
   opacity: 0.8;
+  gap: 16px;
 }
 
 /* ===== BMO Times ===== */
@@ -1051,6 +1087,15 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--space-2xl);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  transition: transform 300ms ease-in-out, border-color 300ms ease-in-out;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--bmo-border);
 }
 
 .article-image {
@@ -1095,11 +1140,12 @@ main {
   font-size: 14px;
   font-weight: 700;
   color: var(--bmo-blue);
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, gap 300ms ease-in-out;
 }
 
 .article-link:hover {
   opacity: 0.8;
+  gap: 16px;
 }
 
 /* ===== Talent Community CTA ===== */
@@ -1215,11 +1261,12 @@ main {
   font-size: 16px;
   font-weight: 700;
   border-radius: var(--radius-pill);
-  transition: background 0.2s;
+  transition: background 0.2s, gap 300ms ease-in-out;
 }
 
 .btn-register:hover {
   background: var(--bmo-blue-hover);
+  gap: 16px;
 }
 
 /* ===== Footer ===== */
