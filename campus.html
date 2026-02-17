@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div data-barba="wrapper">
   <!-- Navbar -->
   <header class="navbar">
     <div class="nav-top">
@@ -68,6 +69,7 @@
     </div>
   </header>
 
+<div data-barba="container" data-barba-namespace="campus">
   <!-- Hero Section -->
   <section class="hero hero-campus">
     <div class="hero-bg"></div>
@@ -353,6 +355,17 @@
       </div>
     </div>
   </footer>
+</div><!-- /barba container -->
+</div><!-- /barba wrapper -->
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <!-- App -->
   <script src="nav.js"></script>
+  <script src="scroll.js"></script>
+  <script src="animations.js"></script>
+  <script src="transitions.js"></script>
 </body>
 </html>

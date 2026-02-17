@@ -1,46 +1,72 @@
-document.addEventListener('DOMContentLoaded', function () {
-  var navLinks = document.querySelector('.nav-links');
-  var indicator = document.querySelector('.nav-indicator');
-  var activeLink = navLinks.querySelector('a.active');
-  var links = navLinks.querySelectorAll('a:not(.saved-jobs-drawer)');
+/* ===== Navigation Indicator ===== */
+window.BMO = window.BMO || {};
 
-  if (!indicator || !activeLink) return;
+window.BMO.Nav = {
+  indicator: null,
+  activeLink: null,
+  navLinks: null,
+  links: null,
+  _abortController: null,
 
-  function moveIndicator(el) {
+  init: function () {
+    // Abort all previous listeners so we don't duplicate
+    if (this._abortController) this._abortController.abort();
+    this._abortController = new AbortController();
+    var signal = this._abortController.signal;
+
+    this.navLinks = document.querySelector('.nav-links');
+    this.indicator = document.querySelector('.nav-indicator');
+    if (!this.navLinks || !this.indicator) return;
+
+    this.activeLink = this.navLinks.querySelector('a.active');
+    this.links = this.navLinks.querySelectorAll('a:not(.saved-jobs-drawer)');
+
+    if (!this.activeLink) return;
+
+    var self = this;
+
+    // Position indicator on active link after layout settles
+    requestAnimationFrame(function () {
+      self.indicator.style.transition = 'none';
+      self._moveIndicator(self.activeLink);
+      // Enable transitions only after initial positioning
+      requestAnimationFrame(function () {
+        self.indicator.style.transition = 'left 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+      });
+    });
+
+    // Hover: slide indicator to hovered link
+    this.links.forEach(function (link) {
+      link.addEventListener('mouseenter', function () {
+        self._moveIndicator(link);
+      }, { signal: signal });
+    });
+
+    // Mouse leave: return indicator to active link
+    this.navLinks.addEventListener('mouseleave', function () {
+      self._moveIndicator(self.activeLink);
+    }, { signal: signal });
+
+    // Recalculate on resize
+    window.addEventListener('resize', function () {
+      self.indicator.style.transition = 'none';
+      self._moveIndicator(self.activeLink);
+      requestAnimationFrame(function () {
+        self.indicator.style.transition = 'left 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+      });
+    }, { signal: signal });
+  },
+
+  _moveIndicator: function (el) {
+    if (!el || !this.navLinks || !this.indicator) return;
     var linkRect = el.getBoundingClientRect();
-    var navRect = navLinks.getBoundingClientRect();
+    var navRect = this.navLinks.getBoundingClientRect();
     var left = linkRect.left - navRect.left;
     var centerX = left + linkRect.width / 2;
-    indicator.style.left = (centerX - indicator.offsetWidth / 2) + 'px';
+    this.indicator.style.left = (centerX - this.indicator.offsetWidth / 2) + 'px';
   }
+};
 
-  // Position indicator on active link after layout settles
-  requestAnimationFrame(function () {
-    moveIndicator(activeLink);
-    // Enable transitions only after initial positioning
-    indicator.style.transition = 'left 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
-  });
-
-  // Hover: slide indicator to hovered link
-  links.forEach(function (link) {
-    link.addEventListener('mouseenter', function () {
-      moveIndicator(link);
-    });
-  });
-
-  // Mouse leave: return indicator to active link
-  navLinks.addEventListener('mouseleave', function () {
-    moveIndicator(activeLink);
-  });
-
-  // Recalculate on resize
-  window.addEventListener('resize', function () {
-    // Temporarily disable transition for instant repositioning
-    indicator.style.transition = 'none';
-    moveIndicator(activeLink);
-    // Re-enable after a frame
-    requestAnimationFrame(function () {
-      indicator.style.transition = 'left 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
-    });
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  window.BMO.Nav.init();
 });
