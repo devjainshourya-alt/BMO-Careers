@@ -91,8 +91,8 @@ window.BMO.Transitions = {
     // Remove no-js class (in case it's on the new page)
     document.documentElement.classList.remove('no-js');
 
-    // Re-init scroll animations for new page content
-    if (window.BMO.Animations) window.BMO.Animations.init();
+    // Re-init scroll animations for new page content (scoped to new container)
+    if (window.BMO.Animations) window.BMO.Animations.init(data.next.container);
 
     // Refresh ScrollTrigger after layout settles
     if (typeof ScrollTrigger !== 'undefined') {

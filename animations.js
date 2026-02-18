@@ -2,14 +2,16 @@
 window.BMO = window.BMO || {};
 
 window.BMO.Animations = {
-  init: function () {
+  init: function (container) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
     gsap.registerPlugin(ScrollTrigger);
+    this._container = container || document;
 
     this.animateHero();
     this.animateHeroParallax();
+    this.animateTalentParallax();
     this._revealOnScroll('.section-head');
     this._revealOnScroll('.job-card', true);
     this._revealOnScroll('.career-card', true);
@@ -30,9 +32,9 @@ window.BMO.Animations = {
     }
     // Clear any inline styles GSAP may have set
     var selectors = [
-      '.hero-text-group', '.search-bar',
+      '.hero-bg', '.hero-text-group', '.search-bar',
       '.section-head', '.job-card', '.career-card', '.article-card',
-      '.talent-cta-content', '.commitment-card', '.commitment-header',
+      '.talent-cta-bg', '.talent-cta-content', '.commitment-card', '.commitment-header',
       '.testimonial-quote', '.video-testimonial', '.team-card',
       '.career-paths-header', '.testimonials-header'
     ];
@@ -44,8 +46,9 @@ window.BMO.Animations = {
 
   // --- Hero entrance (immediate, no scroll trigger) ---
   animateHero: function () {
-    var textGroup = document.querySelector('.hero-text-group');
-    var searchBar = document.querySelector('.search-bar');
+    var container = this._container || document;
+    var textGroup = container.querySelector('.hero-text-group');
+    var searchBar = container.querySelector('.search-bar');
     if (!textGroup) return;
 
     gsap.set(textGroup, { opacity: 0, y: 30 });
@@ -60,17 +63,36 @@ window.BMO.Animations = {
 
   // --- Hero parallax (desktop only) ---
   animateHeroParallax: function () {
-    var heroBg = document.querySelector('.hero-bg');
+    var container = this._container || document;
+    var heroBg = container.querySelector('.hero-bg');
     if (!heroBg || window.innerWidth < 768) return;
 
     gsap.to(heroBg, {
       scrollTrigger: {
-        trigger: '.hero',
+        trigger: container.querySelector('.hero'),
         start: 'top top',
         end: 'bottom top',
         scrub: 1,
       },
       y: '25%',
+      ease: 'none',
+    });
+  },
+
+  // --- Talent community parallax (desktop only) ---
+  animateTalentParallax: function () {
+    var container = this._container || document;
+    var talentBg = container.querySelector('.talent-cta-bg');
+    if (!talentBg || window.innerWidth < 768) return;
+
+    gsap.to(talentBg, {
+      scrollTrigger: {
+        trigger: container.querySelector('.talent-cta'),
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+      },
+      y: '-8%',
       ease: 'none',
     });
   },

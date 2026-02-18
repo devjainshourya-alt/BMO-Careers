@@ -97,9 +97,7 @@ img {
 /* ===== Navbar ===== */
 .navbar {
   width: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--bmo-white);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -137,6 +135,12 @@ img {
   font-size: 16px;
   color: var(--bmo-dark);
   padding: 0 0 0 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.locale-item:hover {
+  color: var(--bmo-blue);
 }
 
 .locale-border-right {
@@ -213,6 +217,17 @@ img {
   gap: var(--space-sm);
   font-size: 16px;
   color: var(--bmo-dark);
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.saved-jobs:hover {
+  color: var(--bmo-blue);
+}
+
+.saved-jobs:hover .heart-icon {
+  transform: scale(1.1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .heart-icon {
@@ -231,13 +246,24 @@ img {
   font-size: 14px;
   font-weight: 700;
   color: var(--bmo-blue);
-  background: transparent;
-  transition: background-color 0.2s, color 0.2s;
+  background: var(--bmo-white);
+  transition: all 0.2s;
 }
 
 .btn-apply-now:hover {
   background: var(--bmo-blue);
   color: var(--bmo-white);
+}
+
+.btn-apply-now:active {
+  transform: scale(0.98);
+  background: var(--bmo-blue-hover);
+  border-color: var(--bmo-blue-hover);
+}
+
+.btn-apply-now:focus-visible {
+  outline: 2px solid var(--bmo-blue);
+  outline-offset: 2px;
 }
 
 .nav-toggle {
@@ -378,16 +404,39 @@ img {
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.2s, gap 300ms ease-in-out;
+  transition: background 0.2s, transform 0.1s;
 }
 
 .btn-search:hover {
   background: var(--bmo-blue-hover);
-  gap: 16px;
 }
 
-.btn-search svg {
+.btn-search:active {
+  transform: scale(0.98);
+  background: var(--bmo-dark);
+}
+
+.btn-search:focus-visible {
+  outline: 2px solid var(--bmo-dark);
+  outline-offset: 2px;
+}
+
+.btn-search:disabled,
+.btn-search[disabled] {
+  background: var(--bmo-gray-light);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-search svg,
+.btn-search .chevron-icon {
   flex-shrink: 0;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-search:hover svg,
+.btn-search:hover .chevron-icon {
+  transform: translateX(4px);
 }
 
 /* ===== Campus Hero Banner Override ===== */
@@ -484,12 +533,29 @@ main {
   color: var(--bmo-gray);
   text-decoration: underline;
   letter-spacing: -0.02em;
-  transition: color 0.2s, gap 300ms ease-in-out;
+  transition: color 0.2s;
 }
 
 .view-all:hover {
   color: var(--bmo-blue);
-  gap: 16px;
+}
+
+.view-all:active {
+  color: var(--bmo-dark);
+}
+
+.view-all:focus-visible {
+  outline: 2px solid var(--bmo-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.view-all .chevron-icon {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.view-all:hover .chevron-icon {
+  transform: translateX(4px);
 }
 
 /* ===== Recent Listings ===== */
@@ -512,23 +578,6 @@ main {
   flex-direction: column;
   gap: var(--space-2xl);
   justify-content: space-between;
-  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
-}
-
-.job-card:hover {
-  background: var(--bmo-blue);
-  border-color: var(--bmo-blue);
-}
-
-.job-card:hover .job-category,
-.job-card:hover .job-title,
-.job-card:hover .job-meta,
-.job-card:hover .job-card-cta {
-  color: var(--bmo-white);
-}
-
-.job-card:hover .job-card-cta .chevron-icon {
-  filter: brightness(0) invert(1);
 }
 
 .job-card-body {
@@ -549,7 +598,6 @@ main {
   letter-spacing: -0.02em;
   color: var(--bmo-gray);
   text-transform: uppercase;
-  transition: color 300ms ease-in-out;
 }
 
 .job-title {
@@ -558,7 +606,6 @@ main {
   letter-spacing: -0.02em;
   color: var(--bmo-dark);
   line-height: 1.4;
-  transition: color 300ms ease-in-out;
 }
 
 .job-meta {
@@ -566,7 +613,6 @@ main {
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--bmo-dark);
-  transition: color 300ms ease-in-out;
 }
 
 .job-card-cta {
@@ -578,21 +624,30 @@ main {
   color: var(--bmo-blue);
   background: none;
   text-decoration: none;
-  transition: color 300ms ease-in-out, gap 300ms ease-in-out;
+  transition: color 0.2s;
   align-self: flex-start;
-}
-
-.job-card-cta .chevron-icon {
-  transition: filter 300ms ease-in-out;
-}
-
-.job-card-cta:hover,
-.job-card:hover .job-card-cta {
-  gap: 12px;
 }
 
 .job-card-cta:hover {
   color: var(--bmo-blue-hover);
+}
+
+.job-card-cta:active {
+  color: var(--bmo-dark);
+}
+
+.job-card-cta:focus-visible {
+  outline: 2px solid var(--bmo-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.job-card-cta .chevron-icon {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.job-card-cta:hover .chevron-icon {
+  transform: translateX(4px);
 }
 
 .job-card-cta svg path {
@@ -703,12 +758,29 @@ main {
   font-size: 14px;
   font-weight: 700;
   color: var(--bmo-blue);
-  transition: opacity 0.2s, gap 300ms ease-in-out;
+  transition: opacity 0.2s;
 }
 
 .career-card-link:hover {
   opacity: 0.8;
-  gap: 16px;
+}
+
+.career-card-link:active {
+  opacity: 0.6;
+}
+
+.career-card-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.career-card-link .chevron-icon {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.career-card-link:hover .chevron-icon {
+  transform: translateX(4px);
 }
 
 .career-card-link-white {
@@ -1060,12 +1132,11 @@ main {
   font-size: 16px;
   font-weight: 700;
   color: var(--bmo-blue);
-  transition: opacity 0.2s, gap 300ms ease-in-out;
+  transition: opacity 0.2s;
 }
 
 .team-card-link:hover {
   opacity: 0.8;
-  gap: 16px;
 }
 
 /* ===== BMO Times ===== */
@@ -1140,12 +1211,29 @@ main {
   font-size: 14px;
   font-weight: 700;
   color: var(--bmo-blue);
-  transition: opacity 0.2s, gap 300ms ease-in-out;
+  transition: opacity 0.2s;
 }
 
 .article-link:hover {
   opacity: 0.8;
-  gap: 16px;
+}
+
+.article-link:active {
+  opacity: 0.6;
+}
+
+.article-link:focus-visible {
+  outline: 2px solid var(--bmo-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.article-link .chevron-icon {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.article-link:hover .chevron-icon {
+  transform: translateX(4px);
 }
 
 /* ===== Talent Community CTA ===== */
@@ -1261,12 +1349,30 @@ main {
   font-size: 16px;
   font-weight: 700;
   border-radius: var(--radius-pill);
-  transition: background 0.2s, gap 300ms ease-in-out;
+  transition: background 0.2s, transform 0.1s;
 }
 
 .btn-register:hover {
   background: var(--bmo-blue-hover);
-  gap: 16px;
+}
+
+.btn-register:active {
+  transform: scale(0.98);
+  background: var(--bmo-dark);
+}
+
+.btn-register:focus-visible {
+  outline: 2px solid var(--bmo-white);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--bmo-blue);
+}
+
+.btn-register .chevron-icon {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-register:hover .chevron-icon {
+  transform: translateX(4px);
 }
 
 /* ===== Footer ===== */
@@ -1933,7 +2039,7 @@ main {
 }
 
 /* ===== Responsive: Mobile (< 768px) ===== */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
 
   /* ---- Navigation ---- */
   .nav-locale {
@@ -2097,6 +2203,10 @@ main {
   }
 
   /* ---- Hero Section ---- */
+}
+
+/* ===== Responsive: Mobile (< 768px) ===== */
+@media (max-width: 767px) {
   .hero {
     height: 400px;
   }
@@ -2893,43 +3003,4 @@ main {
   .footer-legal {
     max-width: 1100px;
   }
-}
-
-/* ===== Animation Prep (GSAP ScrollTrigger) ===== */
-/* Performance hint for hero parallax */
-.hero-bg {
-  will-change: transform;
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .hero-bg {
-    will-change: auto;
-  }
-}
-
-/* Lenis smooth scroll */
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
 }
