@@ -190,12 +190,12 @@ img {
 .nav-indicator {
   position: absolute;
   bottom: -4px;
-  height: 5px;
-  width: 18px;
-  border-radius: 2px;
+  height: 4px;
+  width: 14px;
+  border-radius: 8px;
   background-color: #ED1C24;
   transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-              width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
 }
 
@@ -1747,9 +1747,9 @@ main {
 @media (max-width: 1440px) {
 
   /* Hero: Shift banner image to the right */
-  .hero-bg {
+  /* .hero-bg {
     background-position: 150% 0;
-  }
+  } */
 
   /* Career Path: Add gap between image and text to prevent overlap */
   .career-card-text {
@@ -1789,6 +1789,43 @@ main {
 
   .talent-img-4 {
     margin-top: 101px;
+  }
+
+  /* ===== BMO Home Page Banner Override ===== */
+  .hero-bg {
+    background-image:
+      url('assets/images/hero-background.png'),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    background-size: 1100px auto, cover;
+    background-position: 160% 0%;
+  }
+
+  /* ===== Campus Hero Banner Override ===== */
+  .hero-campus .hero-bg {
+    background:
+      url('assets/images/campus/BMO-Campus/Campus-Banner-Desktop.png') no-repeat,
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    background-size: 850px auto, contain;
+    background-position: 120% 80%;
+  }
+
+
+  /* ===== Our Teams Hero Banner Override ===== */
+  .hero-teams .hero-bg {
+    background:
+      url('assets/images/our-teams/teams-banner-desktop.png') no-repeat,
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    background-size: 980px auto, cover;
+    background-position: 140% 60%;
+  }
+
+  /* ===== Work at BMO Hero Banner Override ===== */
+  .hero-work .hero-bg {
+    background:
+      url('assets/images/work-at-bmo/work-banner-desktop.png') no-repeat,
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    background-size: 900px auto, cover;
+    background-position: 130% 15%;
   }
 }
 
@@ -1864,6 +1901,43 @@ main {
 
   .student-activities-fade {
     width: 120px;
+  }
+
+  /* ===== BMO Home Page Banner Override ===== */
+  .hero-bg {
+    background-image:
+      url('assets/images/hero-background.png'),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    background-size: 110% auto, cover;
+    background-position: -200% 20%;
+  }
+
+  /* ===== Campus Hero Banner Override ===== */
+  .hero-campus .hero-bg {
+    background:
+      url('assets/images/campus/BMO-Campus/Campus-Banner-Desktop.png') no-repeat,
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    background-size: 850px auto, contain;
+    background-position: 200% 80%;
+  }
+
+
+  /* ===== Our Teams Hero Banner Override ===== */
+  .hero-teams .hero-bg {
+    background:
+      url('assets/images/our-teams/teams-banner-desktop.png') no-repeat,
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    background-size: 950px auto, contain;
+    background-position: 450% 60%;
+  }
+
+  /* ===== Work at BMO Hero Banner Override ===== */
+  .hero-work .hero-bg {
+    background:
+      url('assets/images/work-at-bmo/work-banner-desktop.png') no-repeat,
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
+    background-size: 900px auto, cover;
+    background-position: 280% 15%;
   }
 }
 
@@ -2265,8 +2339,8 @@ main {
       url('assets/images/our-teams/teams-banner-mobile.png'),
       linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
     background-repeat: no-repeat, repeat;
-    background-size: 170% auto;
-    background-position: -140px -60px;
+    background-size: 175% auto;
+    background-position: -165px -100px;
   }
 
   /* Work at BMO mobile banner override */
@@ -2276,7 +2350,7 @@ main {
       linear-gradient(180deg, rgba(255, 255, 255, 0.1) 2%, rgba(247, 248, 250, 0.8) 100%);
     background-repeat: no-repeat, repeat;
     background-size: 150% auto;
-    background-position: 50% -200%;
+    background-position: 50% -65%;
   }
 
   .hero-content {
